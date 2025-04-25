@@ -1,0 +1,8 @@
+@font-face {
+  font-family: "IranNastaliq";
+  src: url("./fonts/IranNastaliq.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Shekaste";
+  src: url("./fonts/Shekasteh.ttf") format("truetype");
+}

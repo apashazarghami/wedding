@@ -1,0 +1,97 @@
+@keyframes drop-in {
+  from {
+    /* transform: translateY(-100px); */
+    opacity: 0;
+  }
+  to {
+    /* transform: translateY(0); */
+    opacity: 1;
+  }
+}
+
+@keyframes drop-right {
+  from {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes drop-left {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes drop-down {
+  from {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-drop-in {
+  animation: drop-in 1s ease-out forwards;
+}
+
+.animate-drop-in1 {
+  animation: drop-in 2s ease-out forwards;
+}
+.animate-drop-in2 {
+  animation: drop-in 3s ease-out forwards;
+}
+.animate-drop-in3 {
+  animation: drop-in 3s ease-out forwards;
+}
+.animate-drop-in4 {
+  animation: drop-in 3s ease-out forwards;
+}
+.animate-drop-in5 {
+  animation: drop-in 3s ease-out forwards;
+}
+.animate-drop-in6 {
+  animation: drop-in 3s ease-out forwards;
+}
+.animate-drop-in7 {
+  animation: drop-in 3s ease-out forwards;
+}
+
+
+
+.animate-drop-down {
+  animation: drop-down 1s ease-out forwards;
+}
+
+.animate-drop-down1 {
+  animation: drop-down 2s ease-out forwards;
+}
+.animate-drop-down2 {
+  animation: drop-down 3s ease-out forwards;
+}
+.animate-drop-down3 {
+  animation: drop-down 3s ease-out forwards;
+}
+.animate-drop-down4 {
+  animation: drop-down 3s ease-out forwards;
+}
+.animate-drop-down5 {
+  animation: drop-down 3s ease-out forwards;
+}
+.animate-drop-down6 {
+  animation: drop-down 3s ease-out forwards;
+}
+.animate-drop-down7 {
+  animation: drop-down 3s ease-out forwards;
+}
