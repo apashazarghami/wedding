@@ -1,8 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import "./App.css";
-import baTo from "./assets/audio/ba_to.mp3";
-import yarMobarakBada from "./assets/audio/yar-mobarak-bada.mp3";
-import to from "./assets/audio/to.mp3";
 import aroosi from "./assets/audio/aroosi.mp3";
 import "./font.css";
 
