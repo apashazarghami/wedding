@@ -169,7 +169,7 @@ function App() {
         className="flex w-full text-5xl justify-center animate-drop-down2"
         style={{ marginBottom: "20px" }}
       >
-        پنج‌شنبه | ۱ | خرداد ۱۴۰۳
+        پنج‌شنبه | ۱ | خرداد ۱۴۰۴
       </p>
       <p
         className="flex w-full text-5xl justify-center animate-drop-down3"
