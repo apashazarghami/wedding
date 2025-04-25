@@ -2,13 +2,15 @@ import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import baTo from "./assets/audio/ba_to.mp3";
 import yarMobarakBada from "./assets/audio/yar-mobarak-bada.mp3";
+import to from "./assets/audio/to.mp3";
+import aroosi from "./assets/audio/aroosi.mp3";
 import "./font.css";
 
 const slideTimings = {
-  slide1: 12000,
-  slide2: 16000,
-  slide3Text: 22000,
-  slide3Image: 5000,
+  slide1: 13000,
+  slide2: 18000,
+  slide3Text: 25000,
+  slide3Image: 3000,
 };
 const textsSlide1 = [
   {
@@ -258,7 +260,7 @@ function App() {
           </div>
         </div>
       )}
-      <audio ref={audioRef} src={baTo} loop muted />
+      <audio ref={audioRef} src={aroosi} loop />
     </div>
   );
 }
