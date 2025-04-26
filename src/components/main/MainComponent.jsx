@@ -208,36 +208,12 @@ function MainComponent({ title }) {
     </div>
   );
 
-//   const slide3Text = (
-//     <div
-//       className={`transition-opacity duration-2000 ${
-//         fadeOut ? "opacity-0" : "opacity-100"
-//       }`}
-//     >
-//       <p className="flex text-center leading-14 w-full text-5xl animate-drop-down">
-//         عزیزای دلمون
-//       </p>
-//       <p className="flex justify-center text-center leading-14 w-full text-4xl animate-drop-down1">
-//         میخوایم با کلی ذوق و عشق روز عقدمونو در کنار شما جشن بگیریم. یه خواهش با
-//         قلبی پر از احترام ازتون داریم؛ چون سالنمون محدودیت ظرفیت داره و دلمون
-//         میخواد همه‌ی دوستای صمیمیمون کنارمون باشن، این مراسم رو فقط برای
-//         بزرگترها در نظر گرفتیم. ممنون میشیم اگر فرشته‌های کوچولوتون رو به آغوش
-//         خانواده بسپارین و با حضور گرمتون کنارمون باشین. ازتون ممنونیم که با درک
-//         قشنگتون کمک میکنین این شب برای هممون خاص و خاطره‌انگیز بشه.
-//       </p>
-//       <p className="flex justify-center text-center leading-14 w-full text-4xl animate-drop-down1">
-//         ما را در این عاشقانه همراه باشید.
-//       </p>
-//     </div>
-//   );
-
   return (
     <div>
       {!started ? (
         <div>
           <div className='flex flex-col items-center justify-center w-full h-screen  bg-cover bg-center bg-local bg-[url("./images/Beige.png")]'>
           {title ? <div className="text-4xl flex justify-start w-full" style={{ padding: '16px 32px'}}>{title}</div> : null}
-          <Link to='/family'>خانواده</Link>
             <button
               onClick={handleStart}
               className="px-8 py-4 rounded-full cursor-pointer font-medium text-6xl shadow-xl"
