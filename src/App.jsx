@@ -37,6 +37,10 @@ function App() {
       <Route path='/askan-saghar' element={<MainComponent title='اشکان جونم به همراه ساغر عزیز' />} />
       {/* <Route path='/parham' element={<MainComponent title='پرهام جونم' />} /> */}
       <Route path='/eslami' element={<MainComponent title='آقای اسلامی به همراه خانواده گرامی' />} />
+      <Route path='/dr-ghalamchi' element={<MainComponent title='جناب آقای دکتر قلم‌چی' />} />
+      <Route path='/lotfi' element={<MainComponent title='جناب آقای لطفی و همسر گرامی' />} />
+      <Route path='/asadolahi' element={<MainComponent title='جناب آقای اسدالهی و همسر گرامی' />} />
+      <Route path='/reza' element={<MainComponent title='رضا  عزیزم' />} />
     </Routes>
   );
 }
