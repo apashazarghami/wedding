@@ -235,7 +235,7 @@ function MainComponent({ title }) {
       {!started ? (
         <div>
           <div className='flex flex-col items-center justify-center w-full h-screen  bg-cover bg-center bg-local bg-[url("./images/Beige.png")]'>
-          <div className="text-4xl flex justify-start w-full" style={{ padding: '16px 32px'}}>{title}</div>
+          {title ? <div className="text-4xl flex justify-start w-full" style={{ padding: '16px 32px'}}>{title}</div> : null}
             <button
               onClick={handleStart}
               className="px-8 py-4 rounded-full cursor-pointer font-medium text-6xl shadow-xl"
