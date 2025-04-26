@@ -1,264 +1,43 @@
-import { useEffect, useRef, useState } from "react";
-import "./App.css";
-import aroosi from "./assets/audio/aroosi.mp3";
-import "./font.css";
-
-const slideTimings = {
-  slide1: 13000,
-  slide2: 18000,
-  slide3Text: 25000,
-  slide3Image: 3000,
-};
-const textsSlide1 = [
-  {
-    text: "به‌نام عشق",
-    fontSize: "4xl",
-    marginBottom: "40px",
-    justify: "justify-center",
-    classNames: 'animate-drop-in'
-  },
-  {
-    text: "الهام و امیرپاشا",
-    fontSize: "6xl",
-    marginBottom: "40px",
-    fontFamily: "IranNastaliq",
-    classNames: 'animate-drop-in1'
-  },
-  {
-    text: "به سنت عشق گرد هم می‌آییم",
-    fontSize: "4xl",
-    marginBottom: "20px",
-    classNames: 'animate-drop-in2'
-  },
-  {
-    text: "آنجا که دوست داشتن تنها کلام زندگی است",
-    fontSize: "4xl",
-    marginBottom: "40px",
-    marginRight: "30px",
-    classNames: 'animate-drop-in3'
-  },
-  {
-    text: "عبدالملکی - ضرغامی",
-    fontSize: "4xl",
-    marginBottom: "40px",
-    justify: "justify-end",
-    marginLeft: "40px",
-    classNames: 'animate-drop-in4'
-  },
-  {
-    text: "شادی وقتی زیباتر می‌شود",
-    fontSize: "4xl",
-    marginBottom: "20px",
-    classNames: 'animate-drop-in5'
-  },
-  {
-    text: "که با عزیزانمان تقسیمش کنیم",
-    fontSize: "4xl",
-    marginBottom: "20px",
-    justify: "justify-end",
-    classNames: 'animate-drop-in6'
-  },
-  {
-    text: "ممنون که این لحظه را در کنار ما می‌سازید",
-    fontSize: "4xl",
-    marginBottom: "20px",
-    justify: "justify-center",
-    classNames: 'animate-drop-in7'
-  },
-];
+import { Route, Routes } from "react-router-dom";
+import MainComponent from "./components/main/MainComponent";
 
 function App() {
-  const audioRef = useRef(null);
-  const [started, setStarted] = useState(false);
-  const [slide, setSlide] = useState(0);
-  const [currentLine, setCurrentLine] = useState(0);
-  const [typedText, setTypedText] = useState("");
-  const [charIndex, setCharIndex] = useState(0);
-  const [fadeOut, setFadeOut] = useState(false); // حالت جدید برای fade-out
-
-  const handleStart = () => {
-    audioRef.current.play();
-    setStarted(true);
-  };
-
-  useEffect(() => {
-    if (!started) return;
-
-    if (slide === 0) {
-      let timer1 = setTimeout(() => setSlide(1), slideTimings.slide1);
-      return () => clearTimeout(timer1);
-    }
-    if (slide === 1) {
-      let timer2 = setTimeout(() => setSlide(2), slideTimings.slide2);
-      return () => clearTimeout(timer2);
-    }
-    if (slide === 2) {
-      // 2 ثانیه قبل از پایان اسلاید سوم، fade-out شروع می‌شود
-      let fadeTimer = setTimeout(() => setFadeOut(true), slideTimings.slide3Text - 2000);
-      let timer3 = setTimeout(() => {
-        setSlide(3);
-        setFadeOut(false); // reset fade-out برای دفعه بعدی
-      }, slideTimings.slide3Text);
-      return () => {
-        clearTimeout(fadeTimer);
-        clearTimeout(timer3);
-      };
-    }
-    if (slide === 3) {
-      let timer4 = setTimeout(() => setSlide(0), slideTimings.slide3Image);
-      return () => clearTimeout(timer4);
-    }
-  }, [slide, started]);
-
-  useEffect(() => {
-    if (slide !== 0 || currentLine >= textsSlide1.length) return;
-    const line = textsSlide1[currentLine];
-
-    if (charIndex < line.length) {
-      const timeout = setTimeout(() => {
-        setTypedText((prev) => prev + line.charAt(charIndex));
-        setCharIndex((prev) => prev + 1);
-      }, 100);
-      return () => clearTimeout(timeout);
-    } else {
-      const timeout = setTimeout(() => {
-        setCurrentLine((prev) => prev + 1);
-        setCharIndex(0);
-        setTypedText("");
-      }, 1000);
-      return () => clearTimeout(timeout);
-    }
-  }, [charIndex, currentLine, slide]);
-
-  const slide1Content = (
-    <div>
-      {textsSlide1.map((item, index) => (
-        <p
-          key={index}
-          className={`w-full flex ${item?.justify} text-${item.fontSize} ${item.classNames}`}
-          style={{
-            marginBottom: item.marginBottom,
-            marginRight: item.marginRight || "0",
-            marginLeft: item.marginLeft || "0",
-          }}
-        >
-          {item.text}
-        </p>
-      ))}
-      {currentLine < textsSlide1.length && (
-        <p
-          className="flex w-full text-4xl justify-center"
-          style={{ marginBottom: "20px", fontFamily: "IranNastaliq" }}
-        >
-          {typedText}
-        </p>
-      )}
-    </div>
-  );
-
-  const slide2Content = (
-    <div>
-      <p
-        className="w-full flex justify-center text-4xl animate-drop-down"
-        style={{ marginBottom: "20px" }}
-      >
-        موعد دیدار ما
-      </p>
-      <p
-        className="flex w-full text-5xl justify-center animate-drop-down2"
-        style={{ marginBottom: "20px" }}
-      >
-        پنج‌شنبه | ۱ | خرداد ۱۴۰۴
-      </p>
-      <p
-        className="flex w-full text-5xl justify-center animate-drop-down3"
-        style={{ marginBottom: "20px" }}
-      >
-        از ساعت ۱۹:۳۰ تا ۲۳:۰۰
-      </p>
-      <p
-        className="flex w-full text-4xl justify-center animate-drop-down4"
-        style={{ marginBottom: "20px" }}
-      >
-        میزبان شماییم در دفتر عقد نقره
-      </p>
-      <p
-        className="flex justify-center w-full text-4xl animate-drop-down5"
-        style={{ marginBottom: "10px" }}
-      >
-        اندرزگو - بلوار صبا - نبش خیابان کریمی
-      </p>
-      <p
-        className="flex justify-center w-full text-4xl animate-drop-down6"
-        style={{ marginBottom: "20px" }}
-      >
-        پلاک ۱۳۷ - واحد ۳
-      </p>
-      <p
-        className="flex justify-center text-center leading-[70px] w-full text-5xl animate-drop-down7"
-        style={{ marginBottom: "20px" }}
-      >
-        برای اینکه بتونیم همه چیز رو با نظم پیش ببریم ممنون میشیم حضور قشنگتون
-        رو تا تاریخ ۱۸اردیبهشت بهمون اطلاع بدین.
-      </p>
-    </div>
-  );
-
-  const slide3Text = (
-    <div className={`transition-opacity duration-2000 ${fadeOut ? 'opacity-0' : 'opacity-100'}`}>
-      <p className="flex text-center leading-14 w-full text-5xl animate-drop-down">
-        عزیزای دلمون
-      </p>
-      <p className="flex justify-center text-center leading-14 w-full text-4xl animate-drop-down1">
-        میخوایم با کلی ذوق و عشق روز عقدمونو در کنار شما جشن بگیریم. یه خواهش با
-        قلبی پر از احترام ازتون داریم؛ چون سالنمون محدودیت ظرفیت داره و دلمون
-        میخواد همه‌ی دوستای صمیمیمون کنارمون باشن، این مراسم رو فقط برای
-        بزرگترها در نظر گرفتیم. ممنون میشیم اگر فرشته‌های کوچولوتون رو به آغوش
-        خانواده بسپارین و با حضور گرمتون کنارمون باشین. ازتون ممنونیم که با درک
-        قشنگتون کمک میکنین این شب برای هممون خاص و خاطره‌انگیز بشه.
-      </p>
-      <p className="flex justify-center text-center leading-14 w-full text-4xl animate-drop-down1">
-        ما را در این عاشقانه همراه باشید.
-      </p>
-    </div>
-  );
 
   return (
-    <div>
-      {!started ? (
-        <div className='flex flex-col items-center justify-center w-full h-screen  bg-cover bg-center bg-local bg-[url("./images/Beige.png")]'>
-          <button
-            onClick={handleStart}
-            className="px-8 py-4 rounded-full cursor-pointer font-medium text-6xl shadow-xl"
-            style={{ padding: "16px 32px" }}
-          >
-            ورود به دعوتنامه
-          </button>
-        </div>
-      ) : (
-        <div
-          className={`w-full h-screen bg-cover bg-center bg-local bg-[url("./images/IMG_1060.JPG")]`}
-        >
-          <div className="h-screen w-full overflow-y-scroll text-justify flex items-center justify-center">
-            <div
-              className={`${
-                slide === 3
-                  ? slide === 2
-                    ? "drop-in"
-                    : "bg-transparent"
-                  : "bg-white/40 backdrop-blur-xs drop-in"
-              }  h-full w-full flex flex-col justify-center drop-in`}
-              style={{ padding: "20px 10px" }}
-            >
-              {slide === 0 && slide1Content}
-              {slide === 1 && slide2Content}
-              {slide === 2 && slide3Text}
-            </div>
-          </div>
-        </div>
-      )}
-      <audio ref={audioRef} src={aroosi} loop />
-    </div>
+    <Routes>
+      <Route path='/family' element={<MainComponent title='مادر و پدر عزیزمون' />} />
+      <Route path='/kian-zahra' element={<MainComponent title='کیان و زهرای عزیز' />} />
+      {/* <Route path='/elahe-nader' element={<MainComponent title='الهه و نادر عزیز' />} /> */}
+      <Route path='/amoo-taghi' element={<MainComponent title='عمو تقی عزیزم به همراه خانواده قشنگتون' />} />
+      <Route path='/amoo-mojtaba' element={<MainComponent title='عمو مجتبی عزیزم به همراه خانواده قشنگتون' />} />
+      <Route path='/amoo-hisi' element={<MainComponent title='عمو هیسی عزیزم به همراه خانواده قشنگتون' />} />
+      <Route path='/amoo-reza' element={<MainComponent title='عمو رضا و عمه عزیزم به همراه خانواده قشنگتون' />} />
+      <Route path='/elnaz-mohammadreza' element={<MainComponent title='الناز و محمدرضا عزیز' />} />
+      <Route path='/daie-mehdi' element={<MainComponent title='دایی مهدی عزیزم به همراه خانواده قشنگتون' />} />
+      <Route path='/hadi' element={<MainComponent title='هادی عزیزم' />} />
+      <Route path='/jamali' element={<MainComponent title='' />} />
+      <Route path='/zahra' element={<MainComponent title='زهرا جانم به همراه علی آقا' />} />
+      <Route path='/fati-hossein' element={<MainComponent title='فاطی جونم به همراه حسین جونم' />} />
+      <Route path='/meli-ehsan' element={<MainComponent title='ملیکا جونم به همراه احسان جونم' />} />
+      <Route path='/nahid' element={<MainComponent title='ناهید جونم' />} />
+      <Route path='/firouzeh-maryam' element={<MainComponent title='فیروزه جونم به همراه مریم عزیزم' />} />
+      <Route path='/faezeh' element={<MainComponent title='فائزه جونم به همراه زهرا جون' />} />
+      <Route path='/bahareh' element={<MainComponent title='بهاره قشنگم' />} />
+      <Route path='/ghazaleh-mohammad' element={<MainComponent title='غزاله و محمد عزیز' />} />
+      {/* <Route path='/niousha' element={<MainComponent title='نیوشا قشنگم' />} /> */}
+      <Route path='/zari-joon-shahin' element={<MainComponent title='زری جون و شاهین عزیز' />} />
+      <Route path='/hajian' element={<MainComponent title='آقا مرتضی و اعظمی عزیز' />} />
+      <Route path='/parisa' element={<MainComponent title='حسین آقا به همراه خانواده عزیزشون' />} />
+      <Route path='/ali-sara' element={<MainComponent title='علی عزیز به همراه خانواده گرامی' />} />
+      <Route path='/pouya-sara' element={<MainComponent title='پویا عزیز به همراه خانواده گرامی' />} />
+      <Route path='/shamsavi' element={<MainComponent title='عمو شمسوی عزیزم به همراه خانواده عزیزشون' />} />
+      <Route path='/ehsan-nazi-anahid' element={<MainComponent title='احسان جونم به همراه خانواده عزیزشون' />} />
+      <Route path='/amiri' element={<MainComponent title='دایی کاظم به همراه همسر گرامی' />} />
+      <Route path='/bahador-naghmeh-donya' element={<MainComponent title='بهادر جونم به همراه خانواده عزیزشون' />} />
+      <Route path='/askan-saghar' element={<MainComponent title='اشکان جونم به همراه ساغر عزیز' />} />
+      {/* <Route path='/parham' element={<MainComponent title='پرهام جونم' />} /> */}
+      <Route path='/eslami' element={<MainComponent title='آقای اسلامی به همراه خانواده گرامی' />} />
+    </Routes>
   );
 }
 
