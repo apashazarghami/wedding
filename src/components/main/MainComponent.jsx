@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import aroosi from "../../assets/audio/aroosi.mp3";
 import "../../App.css";
 import "../../font.css";
+import { Link } from "react-router-dom";
 
 const slideTimings = {
   slide1: 13000,
@@ -236,6 +237,7 @@ function MainComponent({ title }) {
         <div>
           <div className='flex flex-col items-center justify-center w-full h-screen  bg-cover bg-center bg-local bg-[url("./images/Beige.png")]'>
           {title ? <div className="text-4xl flex justify-start w-full" style={{ padding: '16px 32px'}}>{title}</div> : null}
+          <Link to='/family'>خانواده</Link>
             <button
               onClick={handleStart}
               className="px-8 py-4 rounded-full cursor-pointer font-medium text-6xl shadow-xl"
