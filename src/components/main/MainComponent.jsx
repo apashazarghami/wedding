@@ -169,41 +169,46 @@ function MainComponent({ title }) {
         موعد دیدار ما
       </p>
       <p
-        className="flex w-full text-5xl justify-center animate-drop-down2"
+        className="flex w-full text-5xl justify-center animate-drop-down1"
         style={{ marginBottom: "20px" }}
       >
         پنج‌شنبه | ۱ | خرداد ۱۴۰۴
       </p>
       <p
-        className="flex w-full text-5xl justify-center animate-drop-down3"
+        className="flex w-full text-5xl justify-center animate-drop-down2"
         style={{ marginBottom: "20px" }}
       >
         از ساعت ۱۹:۳۰ تا ۲۳:۰۰
       </p>
       <p
-        className="flex w-full text-4xl justify-center animate-drop-down4"
+        className="flex w-full text-4xl justify-center animate-drop-down3"
         style={{ marginBottom: "20px" }}
       >
         میزبان شماییم در دفتر عقد نقره
       </p>
       <p
-        className="flex justify-center w-full text-4xl animate-drop-down5"
+        className="flex justify-center w-full text-4xl animate-drop-down4"
         style={{ marginBottom: "10px" }}
       >
         اندرزگو - بلوار صبا - نبش خیابان کریمی
       </p>
       <p
-        className="flex justify-center w-full text-4xl animate-drop-down6"
+        className="flex justify-center w-full text-4xl animate-drop-down5"
         style={{ marginBottom: "20px" }}
       >
         پلاک ۱۳۷ - واحد ۳
       </p>
       <p
-        className="flex justify-center text-center leading-[70px] w-full text-5xl animate-drop-down7"
+        className="flex justify-center text-center leading-[70px] w-full text-5xl animate-drop-down6"
         style={{ marginBottom: "20px" }}
       >
         برای اینکه بتونیم همه چیز رو با نظم پیش ببریم ممنون میشیم حضور قشنگتون
         رو تا تاریخ ۱۸اردیبهشت بهمون اطلاع بدین.
+      </p>
+      <p
+        className="flex justify-center w-full text-4xl animate-drop-down7"
+        style={{ marginBottom: "20px" }}
+      >ما را در این عاشقانه همراه باشید.
       </p>
     </div>
   );

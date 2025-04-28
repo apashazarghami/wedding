@@ -42,6 +42,48 @@
   }
 }
 
+@keyframes drop-down1 {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  33% {
+    transform: translateY(0);
+    opacity: 0.33;
+  }
+
+  66% {
+    transform: translateY(0);
+    opacity: 0.66;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes drop-down2 {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  25% {
+    transform: translateY(0);
+    opacity: 0.25;
+  }
+
+  50% {
+    transform: translateY(0);
+    opacity: 0.50;
+  }
+  75% {
+    transform: translateY(0);
+    opacity: 0.75;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 .animate-drop-in {
   animation: drop-in 1s ease-out forwards;
 }
@@ -68,8 +110,6 @@
   animation: drop-in 3s ease-out forwards;
 }
 
-
-
 .animate-drop-down {
   animation: drop-down 1s ease-out forwards;
 }
@@ -81,17 +121,17 @@
   animation: drop-down 3s ease-out forwards;
 }
 .animate-drop-down3 {
-  animation: drop-down 3s ease-out forwards;
+  animation: drop-down 4s ease-out forwards;
 }
 .animate-drop-down4 {
-  animation: drop-down 3s ease-out forwards;
+  animation: drop-down 5s ease-out forwards;
 }
 .animate-drop-down5 {
-  animation: drop-down 3s ease-out forwards;
+  animation: drop-down 6s ease-out forwards;
 }
 .animate-drop-down6 {
-  animation: drop-down 3s ease-out forwards;
+  animation: drop-down 7s ease-out forwards;
 }
 .animate-drop-down7 {
-  animation: drop-down 3s ease-out forwards;
+  animation: drop-down 8s ease-out forwards;
 }
