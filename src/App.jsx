@@ -172,7 +172,7 @@ function App() {
         element={<MainComponent title="محدثه و منصور عزیز" />}
       />
       <Route path="/mahdieh" element={<MainComponent title="مهدیه‌ی عزیز" />} />
-      <Route path="/mahsa" element={<MainComponent title="مهسا عزیز" />} />
+      <Route path="/mahsa" element={<MainComponent title="مهسای عزیز" />} />
       <Route
         path="/azad"
         element={<MainComponent title="جناب آقای آزاد و خانواده گرامی" />}
