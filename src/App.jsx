@@ -48,7 +48,7 @@ function App() {
       <Route path='/daie-naser' element={<MainComponent title='دایی جانم' />} />
       <Route path='/niousha' element={<MainComponent title='نیوشای قشنگم' />} />
       <Route path='/parham' element={<MainComponent title='پرهام جونم' />} />
-      <Route path='/khale-parvaneh-kimia' element={<MainComponent title='خاله پروانه و کیمیا عزیز' />} />
+      <Route path='/khale-parvaneh-kimia' element={<MainComponent title='خاله پروانه و کیمیای عزیز' />} />
       <Route path='/khale-mahrokh-mahour' element={<MainComponent title='خاله ماهرخ و ماهور عزیز' />} />
       <Route path='/khale-parvin' element={<MainComponent title='خاله پروین عزیز' />} />
       <Route path='/maryam' element={<MainComponent title='مریم جون' />} />
