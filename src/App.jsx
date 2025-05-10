@@ -53,10 +53,11 @@ function App() {
       <Route path='/khale-parvin' element={<MainComponent title='خاله پروین عزیز' />} />
       <Route path='/maryam' element={<MainComponent title='مریم جون' />} />
       <Route path='/mansour-mohadeseh' element={<MainComponent title='محدثه و منصور عزیز' />} />
-      <Route path='/mahdieh' element={<MainComponent title='مهدیه عزیز' />} />
+      <Route path='/mahdieh' element={<MainComponent title='مهدیه‌ی عزیز' />} />
       <Route path='/mahsa' element={<MainComponent title='مهسا عزیز' />} />
       <Route path='/azad' element={<MainComponent title='جناب آقای آزاد و خانواده گرامی' />} />
       <Route path='/jamali' element={<MainComponent title='جناب آقای محمد جمالی' />} />
+      <Route path='/amir-mahtab' element={<MainComponent title='امیر و مهتاب عزیز' />} />
     </Routes>
   );
 }
