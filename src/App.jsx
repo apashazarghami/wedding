@@ -41,6 +41,21 @@ function App() {
       <Route path='/lotfi' element={<MainComponent title='جناب آقای لطفی و همسر گرامی' />} />
       <Route path='/asadolahi' element={<MainComponent title='جناب آقای اسدالهی و همسر گرامی' />} />
       <Route path='/reza' element={<MainComponent title='رضا  عزیزم' />} />
+      <Route path='/elaheh-nader' element={<MainComponent title='الهه و نادر  قشنگمون' />} />
+      <Route path='/maryam-navid' element={<MainComponent title='نوید و مریم  عزیز' />} />
+      <Route path='/zandaie' element={<MainComponent title='زن دایی فاطمه عزیزم به همراه  نیلوفر جان' />} />
+      <Route path='/mahnaz' element={<MainComponent title='مهناز عزیزم' />} />
+      <Route path='/daie-naser' element={<MainComponent title='دایی جانم' />} />
+      <Route path='/parham' element={<MainComponent title='پرهام جونم' />} />
+      <Route path='/khale-parvaneh-kimia' element={<MainComponent title='خاله پروانه و کیمیا عزیز' />} />
+      <Route path='/khale-mahrokh-mahour' element={<MainComponent title='خاله ماهرخ و ماهور عزیز' />} />
+      <Route path='/khale-parvin' element={<MainComponent title='خاله پروین عزیز' />} />
+      <Route path='/maryam' element={<MainComponent title='مریم جون' />} />
+      <Route path='/mansour-mohadeseh' element={<MainComponent title='محدثه و منصور عزیز' />} />
+      <Route path='/mahdieh' element={<MainComponent title='مهدیه عزیز' />} />
+      <Route path='/mahsa' element={<MainComponent title='مهسا عزیز' />} />
+      <Route path='/azad' element={<MainComponent title='جناب آقای آزاد و خانواده گرامی' />} />
+      <Route path='/jamali' element={<MainComponent title='جناب آقای محمد جمالی' />} />
     </Routes>
   );
 }

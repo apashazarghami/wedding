@@ -199,13 +199,6 @@ function MainComponent({ title }) {
         پلاک ۱۳۷ - واحد ۳
       </p>
       <p
-        className="flex justify-center text-center leading-[70px] w-full text-5xl animate-drop-down6"
-        style={{ marginBottom: "20px" }}
-      >
-        برای اینکه بتونیم همه چیز رو با نظم پیش ببریم ممنون میشیم حضور قشنگتون
-        رو تا تاریخ ۱۸اردیبهشت بهمون اطلاع بدین.
-      </p>
-      <p
         className="flex justify-center w-full text-4xl animate-drop-down7"
         style={{ marginBottom: "20px" }}
       >ما را در این عاشقانه همراه باشید.
