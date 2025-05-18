@@ -185,6 +185,10 @@ function App() {
         path="/daei-mohammad"
         element={<MainComponent title="جناب آقای محمد جمالی" />}
       />
+      <Route
+        path="/mansouri"
+        element={<MainComponent title="جناب آقای منصوری به همراه خانواده‌ی محترم" />}
+      />
     </Routes>
   );
 }
